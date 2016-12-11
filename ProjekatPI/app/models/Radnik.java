@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,27 @@ public class Radnik extends Model {
 		@Column(nullable = false)
 		public String roditelj;
 		@Column(nullable = false)
+		public Date datumRodjenja;
+		@Column(nullable = false, unique = true)
+		public String brojLicneKarte;
+		@Column(nullable = false)
+		public String brojRadneKnjizice;
+		@Column(nullable = false, unique = true)
+		public String JMBG;
+		@Column(nullable = true)
+		public boolean invalid;
+		@Column(nullable = true)
+		public boolean pripravnik;
+		@Column(nullable = false)
 		public String nacionalnost;
+		@Column(nullable = false)
+		public char pol;
+		@Column(nullable = false)
+		public char status;
+		@Column(nullable = true)
+		public String adresa;
+		@Column(nullable = true)
+		public String telefon;
 
 		public Radnik(String ime, String prezime, String sifra) {
 			super();
