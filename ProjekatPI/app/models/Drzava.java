@@ -12,8 +12,12 @@ import play.db.jpa.Model;
 @Entity
 public class Drzava extends Model{
 
+//	@Required
+	
 	@Column(nullable = false)
 	public String naziv;
+//	@Required
+//	@MinSize(5)
 	@Column(nullable = false, unique = true)
 	public String oznaka;
 	
@@ -26,7 +30,6 @@ public class Drzava extends Model{
 		this.oznaka = oznaka;
 		naseljenaMeste = new ArrayList<NaseljenoMesto>();
 	}
-
 
 	
 	
