@@ -32,30 +32,60 @@ $(document).ready(function(){
   });
   
   $("#first").click(function(){
-  		//indeksi pocinju od 1
-  		//prvi red je header, zato se trazi drugo dete
-  		item = $("table tr:nth-child(2)");
-  		$(".highlighted").removeClass("highlighted");
+		//indeksi pocinju od 1
+		//prvi red je header, zato se trazi drugo dete
+		item = $("table tr:nth-child(2)");
+		$(".highlighted").removeClass("highlighted");
 		item.toggleClass("highlighted");
 		sync(item);
 	});
+
+	$("#last").click(function(){
+		var count = $("tr").length;
+		item = $("table tr:nth-child(" +count+")");
+		$(".highlighted").removeClass("highlighted");
+		item.toggleClass("highlighted");
+		sync(item);
+	});
+
 	
-  $("#next").click(function(){
-  		highlighted = $(".highlighted");
-  		//nalazi poziciju trazanog u okviru selektovane selekcije
-  		//indeksi pocinju od 0
-  		index =  $("tr").index(highlighted);
-  		var count = $("tr").length - 1;
-  		if (count == 0 || index < 0)
-  			return;
-  		if (index == count)//ako smo na poslednjem, predji na prvi (odnosno drugi red, preskacuci header)
-  			index = 2;
-  		else
-  			index += 2; //povecavamo za 1, i jos dodajemo 1 jer nth child pocinje od 1, indeksi od 0
+$("#next").click(function(){
+		highlighted = $(".highlighted");
+		//nalazi poziciju trazanog u okviru selektovane selekcije
+		//indeksi pocinju od 0
+		index =  $("tr").index(highlighted);
+		var count = $("tr").length - 1;
+		if (count == 0 || index < 0)
+			return;
+		if (index == count)//ako smo na poslednjem, predji na prvi (odnosno drugi red, preskacuci header)
+			index = 2;
+		else
+			index += 2; //povecavamo za 1, i jos dodajemo 1 jer nth child pocinje od 1, indeksi od 0
 		item = $("tr:nth-child(" + index + ")");
-  		$(".highlighted").removeClass("highlighted");
+		$(".highlighted").removeClass("highlighted");
 		item.addClass("highlighted");
-  		sync(item);
+		sync(item);
+	});
+
+$("#prev").click(function() {
+		highlighted = $(".highlighted");
+		//nalazi poziciju trazanog u okviru selektovane selekcije
+		//indeksi pocinju od 0
+
+		index =  $("tr").index(highlighted);
+		var count = $("tr").length;
+		if (count == 0 || index < 0)
+			return;
+		if (index == 1)//sako smo na poslednjem, predji na prvi (odnosno drugi red, preskacuci header)
+			index = count;
+		else
+			if (index!=0) index -= 0;
+			
+		//povecavamo za 1, i jos dodajemo 1 jer nth child pocinje od 1, indeksi od 0
+		item = $("tr:nth-child(" + index + ")");
+		$(".highlighted").removeClass("highlighted");
+		item.addClass("highlighted");
+		sync(item);
 	});
 	 $("#remove").click(function(){
  highlighted = $(".highlighted");

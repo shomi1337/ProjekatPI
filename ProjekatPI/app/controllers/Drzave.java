@@ -5,13 +5,16 @@ import java.util.List;
 import models.Drzava;
 import play.data.validation.Required;
 import play.mvc.Controller;
+import play.mvc.With;
 
+@With(Secure.class)
 public class Drzave extends Controller{
 
 	public static void show(String mode){
     	List<Drzava> drzave = Drzava.findAll();
     	if (mode == null || mode.equals(""))
     		 mode = "edit";
+    	
     	render(drzave, mode);
     }
     

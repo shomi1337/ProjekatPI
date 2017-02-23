@@ -1,13 +1,18 @@
 package controllers;
 
-public class Security extends Secure.Security {
+import models.Drzava;
 
-//	static boolean authenticate(String username, String password) {
-//        User user = User.find("byEmail", username).first();
-//        return user != null && user.password.equals(password);
-//    }
+public class Security extends Secure.Security {
 	
 	static boolean authenticate(String username, String password) {
-        return true;
+		if (username.equals("milos") && password.equals("admin"))
+			return true;
+		else if (username.equals("milos") && password.equals("admin"))
+			return true;
+		else if (username.equals("milos") && password.equals("admin"))
+			return true;
+		else if (username.equals("milos") && password.equals("admin"))
+			return true;
+		return false;
     }
 }

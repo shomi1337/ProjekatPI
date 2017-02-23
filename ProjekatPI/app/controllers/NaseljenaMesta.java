@@ -5,7 +5,9 @@ import java.util.List;
 import models.Drzava;
 import models.NaseljenoMesto;
 import play.mvc.Controller;
+import play.mvc.With;
 
+@With(Secure.class)
 public class NaseljenaMesta extends Controller{
 
 	public static void show(String mode){

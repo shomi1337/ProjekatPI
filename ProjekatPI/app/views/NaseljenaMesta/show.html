@@ -46,7 +46,7 @@ function sync(item){
 	<tr class = "header">
 	   <th>Oznaka</th> 
 	   <th>Naziv</th>
-	   <th width="20%">Poštanski broj</th>
+	   <th width="20%">Postanski broj</th>
 	   <th>Država</th>
 	</tr>
 #{list items:naseljenaMesta, as:'naseljenoMesto'}
@@ -96,13 +96,13 @@ function sync(item){
 				</p>
 				<p>
 				#{field 'postanskiBroj'}
-					<label for = "${field.id}">Poštanski broj</label>
+					<label for = "${field.id}">Postanski broj</label>
 					<input type = "text" name = "${field.name}" id = "${field.name}"/>
 				#{/}
 				</p>
 				<p>
 				#{field 'drzava'}
-					<label for = "${field.id}">Država</label>
+					<label for = "${field.id}">Drzava</label>
 					<select name = "${field.name}" id = "${field.id}"/>
 					#{list items:drzave, as:'drzava'}
 					<option value = "${drzava.id}">${drzava.naziv}</option>
@@ -127,7 +127,7 @@ function sync(item){
       <!-- Modal content-->
       <div class="modal-content">
       <div class="modal-header">
-      	Države
+      	Drzave
       </div>
       <div class="modal-body">
 	    <table style = "padding:2em">
