@@ -24,7 +24,4 @@ public class NaseljenoMesto extends Model{
 		this.postanskiBroj = postanskiBroj;
 		this.drzava = drzava;
 	}
-	
-	
-
 }
